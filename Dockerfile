@@ -12,4 +12,6 @@ RUN npm run build
 
 # Run Phase
 FROM nginx
+# Used by Elastic Beanstalk to map directly incoming traffic
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
